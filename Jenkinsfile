@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Cloning Git') {
       steps {
-        git([url: 'https://github.com/kelvinbun/fintext.git', branch: 'master', credentialsId: 'Github'])
+        git([url: 'https://github.com/kelvinbun/fintex.git', branch: 'master', credentialsId: 'Github'])
 
       }
     }
