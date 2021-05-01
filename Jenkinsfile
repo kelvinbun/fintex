@@ -9,9 +9,9 @@ pipeline {
     }
     stage('Copy Source Docker') {
       steps{
-        sshagent(['nfs']){
+//        sshagent(['nfs']){
 //        sh 'scp -r -v -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/Docker-ansible root@192.168.20.178:/home/jenks'
-          sh 'scp -r -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/Docker-ansible root@192.168.20.114:/home/nfs'
+          sh 'scp -r -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/Docker-ansible root@192.168.20.178:/root'
         }
       }
     }
