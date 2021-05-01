@@ -7,13 +7,15 @@ pipeline {
 
       }
     }
-    stage('Copy Source Docker') {
-      steps{
-//        sshagent(['nfs']){
-//        sh 'scp -r -v -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/Docker-ansible root@192.168.20.178:/home/jenks'
-          sh 'scp -r -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/Docker-ansible root@192.168.20.178:/root'
-//        }
-      }
-    }
+    stage('Deploy') {
+      steps {
+        echo '> Deploying the application ...'
+        ansiblePlaybook(
+           vaultCredentialsId: 'AnsibleVault',
+           inventory: '/etc/ansible/hosts',
+           playbook: '/etc/ansible/docker-playbook.yml
+           )
+        }
+     }
   }
 }
