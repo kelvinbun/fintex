@@ -1,0 +1,10 @@
+---
+- hosts: all
+  tasks:
+    - name: Ansible copy files remote to remot
+      copy:
+        src: /var/lib/jenkins/workspace/Docker-ansible
+        dest: /home/jenks
+
+    - name: Deploy Container Using Docker Compose
+      command: docker-compose -f /home/jenks/Docker-ansible/docker-compose.yml up -d --build
