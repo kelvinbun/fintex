@@ -5,7 +5,7 @@ services:
     links:
       - server
     ports:
-      - "5001:22"
+      - "14022:22"
     volumes:
       - ./Client1:/home
     command: sh /home/AlphaClient.sh
@@ -14,7 +14,7 @@ services:
     links:
       - server
     ports:
-      - "5002:22"
+      - "14023:22"
     volumes:
       - ./Client2:/home
     command: sh /home/AlphaClient.sh
@@ -25,5 +25,5 @@ services:
     volumes:
       - ./Server:/home
     ports:
-      - "5000:22"
+      - "14024:22"
     command: sh /home/AlphaServer.sh
