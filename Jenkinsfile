@@ -1,7 +1,7 @@
 pipeline {
   agent any
   triggers{
-    pollSCM ('* * * * *')
+    pollSCM ('*/2 * * * *')
   }
   stages {
     stage('Cloning Git') {
