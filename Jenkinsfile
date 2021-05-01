@@ -13,7 +13,7 @@ pipeline {
 //          sh "ssh -o StrictHostKeyChecking=no root@192.168.20.178"
 //            sh "scp -r docker-compose-prod.yml ubuntu@remoteip:."
 //        sh 'ssh -o StrictHostKeyChecking=no root@192.168.20.178 uptime'
-        sh 'scp -r /var/lib/jenkins/workspace/Docker-ansible/ root@192.168.20.178:/home/jenks'
+        sh 'scp -r /var/lib/jenkins/workspace/Docker-ansible/ -o StrictHostKeyChecking=no root@192.168.20.178:/home/jenks'
         }
       }
     }
