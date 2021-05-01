@@ -9,7 +9,7 @@ pipeline {
     }
     stage('Copy Source Docker') {
       steps{
-        sshagent(['deploy_user']){
+        sshagent(credentials: ['deploy_user']){
 //          sh "ssh -o StrictHostKeyChecking=no root@192.168.20.178"
 //            sh "scp -r docker-compose-prod.yml ubuntu@remoteip:."
 //        sh 'ssh -o StrictHostKeyChecking=no root@192.168.20.178 uptime'
