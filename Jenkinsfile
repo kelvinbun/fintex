@@ -13,7 +13,7 @@ pipeline {
         ansiblePlaybook(
            vaultCredentialsId: 'AnsibleVault',
            inventory: '/etc/ansible/hosts',
-           playbook: '/etc/ansible/docker-playbook.yml
+           playbook: '/etc/ansible/docker-playbook.yml'
            )
         }
      }
